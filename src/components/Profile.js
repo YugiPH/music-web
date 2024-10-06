@@ -4,9 +4,9 @@ import { Avatar } from 'antd';
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-    const navigate = useNavigate();
- return(
-    <Avatar style={{backgroundColor:"gray", cursor:"pointer"}}
+  const navigate = useNavigate();
+  return (
+    <Avatar style={{ backgroundColor: "gray", cursor: "pointer" }}
       size={{
         xs: 15,
         sm: 20,
@@ -15,9 +15,9 @@ const Profile = () => {
         xl: 50,
         xxl: 80,
       }}
-      onClick={()=> navigate("/profile")}
-      icon={<UserOutlined style={{color:"black"}}/>}
+      onClick={() => navigate("/login")}
+      icon={<UserOutlined style={{ color: "black" }} />}
     />
-  );   
+  );
 }
 export default Profile;

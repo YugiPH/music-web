@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import {
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
+  HeartOutlined,
+  PlayCircleOutlined,
   UserOutlined,
+  AppstoreOutlined,
 } from '@ant-design/icons';
 const { Sider } = Layout;
 
@@ -20,15 +19,14 @@ const SideBar = () => {
     };
   }
   const items = [
-    getItem('Cá nhân', '1', <PieChartOutlined />),
-    getItem('Khám phá', '2', <DesktopOutlined />),
-    getItem('User', 'sub1', <UserOutlined />, [
-      getItem('Tom', '3'),
-      getItem('Bill', '4'),
-      getItem('Alex', '5'),
+    getItem('Trang chủ', '1', <PlayCircleOutlined />),
+    getItem('Danh sách yêu thích', '2', <HeartOutlined />),
+    getItem('Khám phá', 'sub1', <AppstoreOutlined />, [
+      getItem('Thể loại', '3'),
+      getItem('Nổi bật', '4'),
+      getItem('Bảng xếp hạng', '5'),
     ]),
-    getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-    getItem('Files', '9', <FileOutlined />),
+    getItem('Cá nhân', '6', <UserOutlined />),
   ];
   return (
     <Sider theme='light' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>

@@ -8,15 +8,25 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ProfilePage from './pages/ProfilePage';
+import PlaySong from './pages/PlaySong';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <App />
+    element: <App />
   },
   {
     path: "/profile",
-    element:  <ProfilePage />
+    element: <ProfilePage />
+  },
+  {
+    path: "/playsong",
+    element: <PlaySong />
+  },
+  {
+    path: "/login",
+    element: <Login />
   },
 ]);
 

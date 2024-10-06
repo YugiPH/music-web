@@ -1,9 +1,10 @@
 import SongCard from './components/SongCard';
 import SideBar from './components/SideBar';
 import SearchInput from './components/SearchInput';
-import { Breadcrumb, Layout, theme } from 'antd';
+import { Layout } from 'antd';
 import Profile from './components/Profile';
-const { Header, Content, Footer, Sider } = Layout;
+import Logo from './components/Logo';
+const { Header, Content, Footer } = Layout;
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
           paddingRight: "50px",
         }}
       >
-        <Profile />
+        <Logo />
         <SearchInput />
         <Profile />
       </Header>
@@ -46,9 +47,7 @@ const App = () => {
             Yutenro{new Date().getFullYear()} Created by vippro
           </Footer>
         </Content>
-
       </Layout>
-
     </Layout>
   );
 };
