@@ -10,6 +10,7 @@ import {
 import ProfilePage from './pages/ProfilePage';
 import SignUp from './pages/SignUp';
 import SongPages from './pages/SongPages';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp />
+  },
+  {
+    path: "/login",
+    element: <Login />
   },
 ]);
 

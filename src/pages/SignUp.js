@@ -1,57 +1,55 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input, Flex } from 'antd';
+import { Button, Form, Input } from 'antd';
+import { NavLink } from 'react-router-dom';
 const SignUp = () => {
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
     };
     return (
-        <Form
-            name="login"
-            initialValues={{
-                remember: true,
-            }}
-            style={{
-                maxWidth: 360,
-            }}
-            onFinish={onFinish}
-        >
-            <Form.Item
-                name="username"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please input your Username!',
-                    },
-                ]}
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', justifyContent: 'center', alignItems: 'center' }}>
+            <h2>Đăng Ký</h2>
+            <Form
+                name="login"
+                initialValues={{
+                    remember: true,
+                }}
+                style={{
+                    minWidth: 350,
+                }}
+                onFinish={onFinish}
             >
-                <Input prefix={<UserOutlined />} placeholder="Username" />
-            </Form.Item>
-            <Form.Item
-                name="password"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Please input your Password!',
-                    },
-                ]}
-            >
-                <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
-            </Form.Item>
-            <Form.Item>
-                <Flex justify="space-between" align="center">
-                    <Form.Item name="remember" valuePropName="checked" noStyle>
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-                </Flex>
-            </Form.Item>
+                <Form.Item
+                    name="username"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input your Username!',
+                        },
+                    ]}
+                >
+                    <Input prefix={<UserOutlined />} placeholder="Username" />
+                </Form.Item>
+                <Form.Item
+                    name="password"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input your Password!',
+                        },
+                    ]}
+                >
+                    <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
+                </Form.Item>
 
-            <Form.Item>
-                <Button block type="primary" htmlType="submit">
-                    Log in
-                </Button>
-            </Form.Item>
-        </Form>
+                <Form.Item>
+                    <Button block type="primary" htmlType="submit">
+                        Sign up
+                    </Button>
+                    Đã có tài khoản? <NavLink to="/login">Đăng nhập ngay</NavLink>
+                </Form.Item>
+            </Form>
+        </div>
     );
 };
 export default SignUp;

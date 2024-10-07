@@ -2,7 +2,7 @@ import SongCard from './components/SongCard';
 import SideBar from './components/SideBar';
 import { Layout } from 'antd';
 import TopBar from './components/TopBar';
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 const App = () => {
   const listSongs = [
@@ -61,13 +61,6 @@ const App = () => {
             })}
 
           </div>
-          <Footer
-            style={{
-              textAlign: 'center'
-            }}
-          >
-            Yutenro{new Date().getFullYear()} Created by vippro
-          </Footer>
         </Content>
       </Layout>
     </Layout>
