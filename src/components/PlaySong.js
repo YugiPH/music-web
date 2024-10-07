@@ -1,15 +1,20 @@
 import React from "react";
 import AudioPlayer from "react-h5-audio-player";
 import 'react-h5-audio-player/lib/styles.css';
-import './pages.css';
 
-const PlaySong = () => {
+const PlaySong = ({ id }) => {
     return (
-        <div className="audio-player-container">
+        <div style={{
+            position: "fixed",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            zIndex: "1000"
+        }}>
             <AudioPlayer
                 style={{ paddingLeft: "100px", paddingRight: "100px" }}
                 autoPlay
-                src="/musictest/NewEra.mp3"
+                src={`/${id}`}
                 onPlay={e => console.log("onPlay")}
             />
         </div>

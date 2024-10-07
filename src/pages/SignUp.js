@@ -1,7 +1,7 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Flex } from 'antd';
-const Login = () => {
+const SignUp = () => {
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
     };
@@ -43,7 +43,6 @@ const Login = () => {
                     <Form.Item name="remember" valuePropName="checked" noStyle>
                         <Checkbox>Remember me</Checkbox>
                     </Form.Item>
-                    <a href="">Forgot password</a>
                 </Flex>
             </Form.Item>
 
@@ -51,9 +50,8 @@ const Login = () => {
                 <Button block type="primary" htmlType="submit">
                     Log in
                 </Button>
-                or <a href="">Register now!</a>
             </Form.Item>
         </Form>
     );
 };
-export default Login;
+export default SignUp;

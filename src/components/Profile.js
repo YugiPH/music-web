@@ -15,7 +15,7 @@ const Profile = () => {
         xl: 50,
         xxl: 80,
       }}
-      onClick={() => navigate("/login")}
+      onClick={() => navigate("/signup")}
       icon={<UserOutlined style={{ color: "black" }} />}
     />
   );

@@ -1,32 +1,40 @@
 import SongCard from './components/SongCard';
 import SideBar from './components/SideBar';
-import SearchInput from './components/SearchInput';
 import { Layout } from 'antd';
-import Profile from './components/Profile';
-import Logo from './components/Logo';
-const { Header, Content, Footer } = Layout;
+import TopBar from './components/TopBar';
+const { Content, Footer } = Layout;
 
 const App = () => {
+  const listSongs = [
+    {
+      id: "1",
+      title: "A",
+      description: "A description",
+      imageUrl: "https://i.pinimg.com/564x/8c/bd/b1/8cbdb1172e0e05b86d911d3e2fe956f2.jpg",
+      songUrl: "NewEra.mp3"
+    },
+    {
+      id: "2",
+      title: "B",
+      description: "B description",
+      imageUrl: "https://i.pinimg.com/564x/8c/bd/b1/8cbdb1172e0e05b86d911d3e2fe956f2.jpg",
+      songUrl: "NewEra.mp3"
+    },
+    {
+      id: "3",
+      title: "C",
+      description: "C description",
+      imageUrl: "https://i.pinimg.com/564x/8c/bd/b1/8cbdb1172e0e05b86d911d3e2fe956f2.jpg",
+      songUrl: "NewEra.mp3"
+    }
+  ]
   return (
     <Layout
       style={{
         minHeight: '100vh',
       }}
     >
-      <Header
-        style={{
-          padding: 0,
-          background: "white",
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          paddingLeft: "50px",
-          paddingRight: "50px",
-        }}
-      >
-        <Logo />
-        <SearchInput />
-        <Profile />
-      </Header>
-
+      <TopBar />
       <Layout>
 
         <SideBar />
@@ -34,10 +42,24 @@ const App = () => {
           <div
             style={{
               padding: 24,
-              minHeight: 510,
+              // minHeight: 510,
+              gap: '1rem',
+              display: 'flex'
             }}
           >
-            <SongCard />
+            {listSongs.map(song => {
+              return (
+                <SongCard
+                  key={song.id}
+                  title={song.title}
+                  description={song.description}
+                  imageUrl={song.imageUrl}
+                  songUrl={song.songUrl}
+                />
+              )
+
+            })}
+
           </div>
           <Footer
             style={{

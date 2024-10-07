@@ -8,8 +8,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ProfilePage from './pages/ProfilePage';
-import PlaySong from './pages/PlaySong';
-import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import SongPages from './pages/SongPages';
 
 const router = createBrowserRouter([
   {
@@ -21,12 +21,12 @@ const router = createBrowserRouter([
     element: <ProfilePage />
   },
   {
-    path: "/playsong",
-    element: <PlaySong />
+    path: "/playsong/:id",
+    element: <SongPages />
   },
   {
-    path: "/login",
-    element: <Login />
+    path: "/signup",
+    element: <SignUp />
   },
 ]);
 
