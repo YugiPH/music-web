@@ -11,19 +11,38 @@ import ProfilePage from './pages/ProfilePage';
 import SignUp from './pages/SignUp';
 import SongPages from './pages/SongPages';
 import Login from './pages/Login';
+import Home from './pages/Home';
+import Favorite from './pages/Favorite';
+import Categories from './pages/Categories';
+import Top from './pages/Top';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
-  },
-  {
-    path: "/profile",
-    element: <ProfilePage />
-  },
-  {
-    path: "/playsong/:id",
-    element: <SongPages />
+    element: <App />,
+    children: [
+      { index: true, element: <Home /> },
+      {
+        path: "profile",
+        element: <ProfilePage />
+      },
+      {
+        path: "playsong/:id/:url",
+        element: <SongPages />
+      },
+      {
+        path: "favorite",
+        element: <Favorite />
+      },
+      {
+        path: "categories",
+        element: <Categories />
+      },
+      {
+        path: "top",
+        element: <Top />
+      },
+    ]
   },
   {
     path: "/signup",
@@ -33,6 +52,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />
   },
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

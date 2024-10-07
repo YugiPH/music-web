@@ -1,11 +1,16 @@
 import React from 'react';
-import { Image } from 'antd';
-const Logo = () => (
-    <div style={{ cursor: "pointer" }}>
-        <Image
+import { Avatar } from "antd";
+import { useNavigate } from 'react-router-dom';
+const Logo = () => {
+    const navigate = useNavigate();
+    const url = "https://www.shutterstock.com/image-vector/note-music-icon-vector-design-260nw-1261030141.jpg"
+    return (
+        <Avatar
+            style={{ cursor: "pointer" }}
             width={50}
-            src="https://www.shutterstock.com/image-vector/note-music-icon-vector-design-260nw-1261030141.jpg"
+            src={<img src={url} alt="avatar" />}
+            onClick={() => navigate("/")}
         />
-    </div>
-);
+    );
+}
 export default Logo;
