@@ -15,6 +15,8 @@ import Home from './pages/Home';
 import Favorite from './pages/Favorite';
 import Categories from './pages/Categories';
 import Top from './pages/Top';
+import CategoryDetail from './pages/CategoryDetail';
+import UploadPage from './pages/UploadPage';
 
 const router = createBrowserRouter([
   {
@@ -36,11 +38,21 @@ const router = createBrowserRouter([
       },
       {
         path: "categories",
-        element: <Categories />
+        element: <Categories />,
+        children: [
+          {
+            path: ":categoryId",
+            element: <CategoryDetail />
+          },
+        ]
       },
       {
         path: "top",
         element: <Top />
+      },
+      {
+        path: "upload",
+        element: <UploadPage />
       },
     ]
   },
